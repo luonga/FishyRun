@@ -76,8 +76,8 @@ class Friend(pygame.sprite.Sprite):
         friends = ["./images/friend1.png", "./images/friend2.png", "./images/friend3.png", "./images/friend4.png"]
         picture = random.choice(friends)
         self.surf = pygame.image.load(picture).convert()
-        #Corrects the sprite color key to match the background
-        if picture != "./images/friend2.png":
+        # Corrects the sprite color key to match the background
+        if picture != "./images/friend4.png" and picture != "./images/friend2.png":
             self.surf.set_colorkey((0, 0, 0), RLEACCEL)
         else:
             self.surf.set_colorkey((255, 255, 255), RLEACCEL)
@@ -248,7 +248,7 @@ while running:
         if pygame.sprite.spritecollideany(player, enemies):
             game_over = True
             game_state = "game_over"
-            
+
         # Player made it home safe!
         if pygame.sprite.spritecollideany(player, homes):
             game_over = True
